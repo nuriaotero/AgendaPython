@@ -20,7 +20,7 @@
 
         <!-- Botón añadir contacto -->
         <div class="text-end mb-3">
-            <a href="/contacto_form.html" class="btn btn-success">+ Añadir Contacto</a>
+            <a href="/contacto/nuevo"  class="btn btn-success">+ Añadir Contacto</a>
         </div>
 
         <!-- Tabla de contactos -->
@@ -41,8 +41,8 @@
                         <td>{{ c.email }}</td>
                         <td>{{ c.telefono }}</td>
                         <td>
-                            <a href="/editar/{{ c.id }}" class="btn btn-editar btn-sm">Editar</a>
-                            <a href="/eliminar/{{ c.id }}" class="btn btn-eliminar btn-sm">Eliminar</a>
+                            <a href="/contacto/editar/{{ c.id }}" class="btn btn-editar btn-sm">Editar</a>
+                            <a href="/contacto/eliminar/{{ c.id }}" class="btn btn-eliminar btn-sm">Eliminar</a>
                         </td>
                     </tr>
                     {% else %}
