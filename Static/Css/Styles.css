@@ -1,0 +1,165 @@
+/* --- Paleta de colores rojizos --- */
+:root {
+    --rojo-oscuro: #8B0000;
+    --rojo-claro: #FF4C4C;
+    --rojo-suave: #FFC2C2;
+    --gris-fondo: #f8f9fa;
+    --blanco: #ffffff;
+}
+
+/* --- Fondo general y fuente --- */
+body {
+    background-color: var(--gris-fondo);
+    font-family: 'Arial', sans-serif;
+}
+
+/* --- Formularios (login / register / editar) --- */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--blanco);
+    border: 2px solid var(--rojo-oscuro);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(139,0,0,0.3);
+}
+
+form h2 {
+    text-align: center;
+    color: var(--rojo-oscuro);
+    margin-bottom: 20px;
+}
+
+/* --- Inputs --- */
+form input, form select, form textarea {
+    margin-bottom: 15px;
+    border: 1px solid var(--rojo-claro);
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* --- Botones --- */
+form button, .btn {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    text-decoration: none; /* quitar subrayado de enlaces estilo boton */
+}
+
+form button:hover, .btn:hover {
+    background-color: var(--rojo-claro);
+    color: var(--blanco);
+}
+
+/* --- Mensajes de error / alerta --- */
+p, .error {
+    color: var(--rojo-oscuro);
+    font-weight: bold;
+}
+
+/* --- Dashboard --- */
+.dashboard {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.dashboard h1 {
+    color: var(--rojo-oscuro);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Tablas --- */
+.dashboard table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.dashboard table th, 
+.dashboard table td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.dashboard table thead {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+}
+
+.dashboard table tbody tr:nth-child(even) {
+    background-color: var(--rojo-suave);
+}
+
+.dashboard table tbody tr:hover {
+    background-color: var(--rojo-claro);
+    color: var(--blanco);
+    transition: 0.3s;
+}
+
+/* --- Botones CRUD en tabla --- */
+.btn-editar {
+    background-color: #FF6666;
+}
+
+.btn-editar:hover {
+    background-color: #FF3333;
+    color: var(--blanco);
+}
+
+.btn-eliminar {
+    background-color: #8B0000;
+}
+
+.btn-eliminar:hover {
+    background-color: #FF0000;
+    color: var(--blanco);
+}
+
+/* --- Enlaces normales --- */
+a {
+    color: var(--rojo-oscuro);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--rojo-claro);
+    text-decoration: underline;
+}
+
+/* --- Cards (si las usas en dashboard) --- */
+.card {
+    border: 1px solid var(--rojo-claro);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(139,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.card-body {
+    background-color: var(--blanco);
+}
+
+/* --- Responsive --- */
+@media (max-width: 576px) {
+    form, .dashboard {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+}
