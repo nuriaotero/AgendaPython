@@ -1,10 +1,29 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='Css/styles.css') }}">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if contacto %}Editar{% else %}Nuevo{% endif %} Contacto</title>
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <h2>{% if contacto %}Editar{% else %}Nuevo{% endif %} Contacto</h2>
 
-<form method="post">
-  <input name="nombre" placeholder="Nombre" value="{{ contacto.nombre if contacto }}">
-  <input name="telefono" placeholder="Teléfono" value="{{ contacto.telefono if contacto }}">
-  <input name="email" placeholder="Email" value="{{ contacto.email if contacto }}">
-  <button>Guardar</button>
-</form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <input type="text" name="nombre" placeholder="Nombre" value="{{ contacto.nombre if contacto }}" required>
+        <input type="email" name="email" placeholder="Email" value="{{ contacto.email if contacto }}" required>
+        <input type="text" name="telefono" placeholder="Teléfono" value="{{ contacto.telefono if contacto }}" required>
+
+        <button type="submit">{% if contacto %}Actualizar{% else %}Guardar{% endif %}</button>
+
+        <p class="mt-2"><a href="/dashboard">Volver al Dashboard</a></p>
+    </form>
+</body>
+</html>
